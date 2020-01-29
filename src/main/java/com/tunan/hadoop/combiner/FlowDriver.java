@@ -1,4 +1,4 @@
-package com.tunan.hadoop.conbiner;
+package com.tunan.hadoop.combiner;
 
 import com.tunan.hadoop.pojo.Flow;
 import com.tunan.hadoop.utils.FileUtil;

@@ -1,7 +1,6 @@
-package com.tunan.hadoop.conbiner;
+package com.tunan.hadoop.combiner;
 
 import org.apache.hadoop.io.Writable;
-import org.apache.hadoop.io.WritableComparator;
 
 import java.io.DataInput;
 import java.io.DataOutput;
