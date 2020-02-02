@@ -1,8 +1,6 @@
 package com.tunan.hadoop.join;
 
 import com.tunan.hadoop.pojo.JoinMain;
-import com.tunan.hadoop.sort.FlowSort;
-import com.tunan.hadoop.sort.FlowSortDriver;
 import com.tunan.hadoop.utils.FileUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -24,22 +22,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.String.*;
-
 /**
  * @description:
  * @author: tunan
  * @create: 2020-01-29 16:39
  * @since: 1.0.0
  **/
-public class JoinDriver extends Configured implements Tool {
+public class ReduceJoinDriver extends Configured implements Tool {
 
     String in = "data/join/";
     String out = "out/";
 
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
-        int run = ToolRunner.run(conf, new JoinDriver(), args);
+        int run = ToolRunner.run(conf, new ReduceJoinDriver(), args);
         System.exit(run);
     }
 
@@ -55,7 +51,7 @@ public class JoinDriver extends Configured implements Tool {
         Job job = Job.getInstance(conf);
 
         //设置驱动类
-        job.setJarByClass(JoinDriver.class);
+        job.setJarByClass(ReduceJoinDriver.class);
 
         //设置Map/Reducer类
         job.setMapperClass(JoinMapper.class);

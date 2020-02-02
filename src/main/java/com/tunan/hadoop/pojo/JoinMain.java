@@ -35,6 +35,12 @@ public class JoinMain implements Writable {
         this.dname = dname;
         this.flag = flag;
     }
+    public JoinMain(Integer empno, String ename, Integer deptno, String dname) {
+        this.empno = empno;
+        this.ename = ename;
+        this.deptno = deptno;
+        this.dname = dname;
+    }
 
     public Integer getEmpno() {
         return empno;
