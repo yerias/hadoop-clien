@@ -48,7 +48,7 @@ public class ChainMRDriver extends Configured implements Tool {
         Job job2 = Job.getInstance(conf);
 
         job1.setJarByClass(ChainMRDriver.class);
-        job1.setJarByClass(ChainMRDriver.class);
+        job2.setJarByClass(ChainMRDriver.class);
 
         ChainMapper.addMapper(job1, ChainMRDriver.incRanDomMapper.class, LongWritable.class, Text.class, Text.class, IntWritable.class, conf);
         ChainReducer.setReducer(job1, ChainMRDriver.incRanDomReduver.class, Text.class, IntWritable.class, Text.class, IntWritable.class, conf);
@@ -61,7 +61,7 @@ public class ChainMRDriver extends Configured implements Tool {
         FileInputFormat.setInputPaths(job2, new Path(out1));
         FileOutputFormat.setOutputPath(job2, new Path(out2));
 
-        //提交job和job1 job-->job 必须按照顺序提交
+        //提交job1和job2 job1-->job2 必须按照顺序提交
         System.out.println("=============第一阶段==============");
         boolean b = job1.waitForCompletion(true);
         if (b) {
@@ -69,7 +69,7 @@ public class ChainMRDriver extends Configured implements Tool {
             boolean b1 = job2.waitForCompletion(true);
             return b1 ? 0 : 1;
         }
-        return 0;
+        return 1;
     }
 
     public static class incRanDomMapper extends Mapper<LongWritable, Text, Text, IntWritable> {

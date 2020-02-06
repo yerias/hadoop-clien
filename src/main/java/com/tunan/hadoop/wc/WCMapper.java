@@ -25,7 +25,7 @@ public class WCMapper extends Mapper<LongWritable,Text,Text, IntWritable> {
         for (String word: words) {
             //注意点2
             k.set(word);
-            context.write(k,v);
+            context.write(new Text(word),v);
         }
     }
 }

@@ -27,7 +27,7 @@ public class WCDriver {
         String out = args[1];*/
 
         String in = "data/wordcount.txt";
-        String out = "/data/wc.txt";
+        String out = "out";
 
         Configuration conf = new Configuration();
 
