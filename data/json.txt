@@ -1,0 +1,5 @@
+{"movie":"1","rate":"5","time":"978300760","userId":"1"}
+{"movie":"2","rate":"4","time":"978702109","userId":"1"}
+{"movie":"3","rate":"3","time":"978401968","userId":"1"}
+{"movie":"4","rate":"4","time":"978300275","userId":"1"}
+{"movie":"5","rate":"3","time":"978801091","userId":"1"}

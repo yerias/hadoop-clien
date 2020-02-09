@@ -117,7 +117,7 @@ public class ReduceJoinDriver extends Configured implements Tool {
     }
 
     public static class JoinReducer extends Reducer<IntWritable, JoinMain,JoinMain, NullWritable> {
-        //核心思路在 每个deptno组 进一次reduce ，前提是map中的key时候deptno
+        //核心思路在 每个deptno组 进一次reduce ，前提是map中的key是deptno
         @Override
         protected void reduce(IntWritable key, Iterable<JoinMain> values, Context context) throws IOException, InterruptedException {
             List<JoinMain> list = new ArrayList<>();
