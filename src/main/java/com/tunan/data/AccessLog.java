@@ -25,7 +25,7 @@ public class AccessLog {
      */
     @Override
     public String toString() {
-        return "["+time+"]\t"+
+        return "["+time+" +0800]\t"+
                 ip+"\t"+
                 x_ip+"\t"+
                 response_time+"\t"+

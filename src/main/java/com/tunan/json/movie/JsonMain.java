@@ -1,4 +1,4 @@
-package com.tunan.hadoop.json;
+package com.tunan.json.movie;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;

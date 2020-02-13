@@ -28,7 +28,7 @@ import java.util.Random;
  **/
 public class ChainMRDriver extends Configured implements Tool {
     private static Random r;
-    String in = "data/skew/access.txt";
+    String in = "data/skew/access.txt.txt";
     String out1 = "out/mr1";
     String out2 = "out/mr2";
 

@@ -1,6 +1,10 @@
 package com.tunan.data;
 
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.io.*;
+import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -43,17 +47,30 @@ public class MakeData {
 
 
     //造数据
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        //BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("data/access.txt"))));
+
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("data/access.txt"),true)));
+
+
+        /*String line;
+        while(StringUtils.isNotEmpty(line=in.readLine())){
+        }*/
 
         MakeData makeData = new MakeData();
-        makeData.log_down();
-
+        for (int i = 0; i < 100; i++) {
+            String line = makeData.log_down();
+            writer.write(line);
+            writer.newLine();
+        }
+        writer.close();
     }
 
     // 造数据 日志下载
-    public void log_down(){
+    public String log_down(){
         String time;    //时间
-        String ip;      //访问ip
+        StringBuilder ip;      //访问ip
         String x_ip;    //代理ip
         Long response_time;  //响应时间
         String referer; //来源
@@ -70,23 +87,27 @@ public class MakeData {
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy:HH:mm:ss");
         //[09/02/2020:14:31:50 +0800]
         time = format.format(date);
-        //210.35.184.9  61.128.0.0 143.255.255
-        //String ip_1 = new Random().nextInt(3)
-        //ip
-        ip = "210.35.184.9";
 
+        //湖南
+        String ip_1 = "175";
+        String ip_2 = String.valueOf(new Random().nextInt(15));
+        String ip_3 = String.valueOf(new Random().nextInt(255));
+        String ip_4 = String.valueOf(new Random().nextInt(255));
+
+        ip = new StringBuilder();
+        ip.append(ip_1).append(".").append(ip_2).append(".").append(ip_3).append(".").append(ip_4);
         //代理ip
         x_ip = "-";
 
         //响应时间
-        response_time = Long.valueOf(new Random().nextInt(100));
+        response_time = Long.valueOf(new Random().nextInt(500));
 
         //来源
         referer = "-";
 
         //请求方式
         String[] methods = {"get","put"};
-        int i = new Random().nextInt(1);
+        int i = new Random().nextInt(10);
         if (i%2==0){
             method = "get";
         }else {
@@ -102,7 +123,7 @@ public class MakeData {
                 "https://www.bilibili.com/video/av52167219",
                 "https://www.bilibili.com/video/av30031910",
                 "https://www.bilibili.com/video/av34829124"};
-        int anInt = new Random().nextInt(10);
+        int anInt = new Random().nextInt(100);
         int r = anInt % 8;
         uri = uris[r];
 
@@ -121,15 +142,15 @@ public class MakeData {
         //response_size
         response_size =Long.valueOf(new Random().nextInt(10000));
 
-        int cacheR = new Random().nextInt();
-        if (cacheR % 5 ==0){
-            cache = "-";
+        int cacheR = new Random().nextInt(1000);
+        if (cacheR % 4 ==0){
+            cache = "MISS";
         }else{
-            cache = "1";
+            cache = "HIT";
         }
 
-        AccessLog log = new AccessLog(time, ip, x_ip, response_time, referer, method, uri, http_code, request_size, response_size, cache);
-        System.out.println(log);
+        AccessLog log = new AccessLog(time, ip.toString(), x_ip, response_time, referer, method, uri, http_code, request_size, response_size, cache);
+        return log.toString();
     }
 
 }

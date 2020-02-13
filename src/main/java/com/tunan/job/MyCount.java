@@ -24,7 +24,7 @@ import java.io.IOException;
  * @since: 1.0.0
  **/
 public class MyCount extends Configured implements Tool {
-    String in = "data/skew/access.txt";
+    String in = "data/skew/access.txt.txt";
     String out = "out";
 
     public static void main(String[] args) throws Exception {

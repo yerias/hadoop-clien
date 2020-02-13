@@ -1,4 +1,4 @@
-package com.tunan.hadoop.json;
+package com.tunan.json.movie;
 
 /**
  * @description:

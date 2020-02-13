@@ -1,8 +1,7 @@
-package com.tunan.hadoop.json;
+package com.tunan.json.movie;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tunan.hadoop.join.MapJoinDriver;
-import com.tunan.hadoop.pojo.JoinMain;
 import com.tunan.hadoop.utils.FileUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -18,7 +17,6 @@ import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
 import java.io.IOException;
-import java.net.URI;
 
 
 /**
@@ -29,7 +27,7 @@ import java.net.URI;
  **/
 public class JsonMapper extends Configured implements Tool {
 
-    private String in = "data/json.txt";
+    private String in = "data/json/json1.txt";
     private String out = "out";
 
     public static void main(String[] args) throws Exception {

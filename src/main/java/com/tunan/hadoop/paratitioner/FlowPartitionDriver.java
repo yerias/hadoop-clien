@@ -26,7 +26,7 @@ import java.io.IOException;
  **/
 public class FlowPartitionDriver extends Configured implements Tool {
     private String in = "data/flow.txt";
-    private String out = "out/";
+    private String out = "out";
 
     //入口函数
     public static void main(String[] args) throws Exception {
@@ -59,7 +59,7 @@ public class FlowPartitionDriver extends Configured implements Tool {
         job.setMapOutputValueClass(Flow.class);
 
         // 设置Partitoner
-        job.setNumReduceTasks(3);
+        job.setNumReduceTasks(2);
         job.setPartitionerClass(Partitoner.class);
 
 
