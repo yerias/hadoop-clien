@@ -1,7 +1,7 @@
 package com.tunan.json.weather;
 
 import com.alibaba.fastjson.JSON;
-import com.tunan.hadoop.utils.FileUtil;
+import com.tunan.utils.FileUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -66,7 +66,7 @@ public class Mapper extends Configured implements Tool {
             String json = value.toString();
             Weather weather = JSON.parseObject(json, Weather.class);
             context.write(NullWritable.get(), weather);
-        }
+        } 
     }
 }
 

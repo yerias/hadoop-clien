@@ -16,8 +16,8 @@ public class AccessLog {
     String method;  //请求方式
     String uri;     //访问url
     int http_code;  //http响应码
-    Long request_size;  //请求大小
-    Long response_size; //响应大小
+    String request_size;  //请求大小
+    String response_size; //响应大小
     String cache;       //命中状态
 
     /*
@@ -41,7 +41,7 @@ public class AccessLog {
     public AccessLog() {
     }
 
-    public AccessLog(String time, String ip, String x_ip, Long response_time, String referer, String method, String uri, int http_code, Long request_size, Long response_size, String cache) {
+    public AccessLog(String time, String ip, String x_ip, Long response_time, String referer, String method, String uri, int http_code, String request_size, String response_size, String cache) {
         this.time = time;
         this.ip = ip;
         this.x_ip = x_ip;
@@ -119,19 +119,19 @@ public class AccessLog {
         this.http_code = http_code;
     }
 
-    public Long getRequest_size() {
+    public String getRequest_size() {
         return request_size;
     }
 
-    public void setRequest_size(Long request_size) {
+    public void setRequest_size(String request_size) {
         this.request_size = request_size;
     }
 
-    public Long getResponse_size() {
+    public String getResponse_size() {
         return response_size;
     }
 
-    public void setResponse_size(Long response_size) {
+    public void setResponse_size(String response_size) {
         this.response_size = response_size;
     }
 

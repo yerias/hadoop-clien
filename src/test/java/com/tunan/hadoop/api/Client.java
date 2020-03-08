@@ -32,6 +32,7 @@ public class Client {
         conf.set("dfs.replication", "1");
         String userName = "hadoop";
         fileSystem = FileSystem.get(uri,conf,userName);
+
     };
     /**
      * @describe : 在文件系统创建目录/文件
@@ -42,8 +43,10 @@ public class Client {
      */
     @Test
     public void createDir() throws  IOException, InterruptedException {
-        fileSystem.mkdirs(new Path("/win2hadoop"));
-        fileSystem.create(new Path("/win2hadoop.txt"));
+//        fileSystem.mkdirs(new Path("/win2hadoop"));
+//        fileSystem.create(new Path("/win2hadoop.txt"));
+        boolean b = FileSystem.areSymlinksEnabled();
+        System.out.println(b);
     }
 
     /**
@@ -136,9 +139,9 @@ public class Client {
     @Test
     public void streamGetFile() throws IOException {
         //输入流
-        FSDataInputStream in = fileSystem.open(new Path("/hadoop-2.6.0-cdh5.16.2.tar.gz"));
+        FSDataInputStream in = fileSystem.open(new Path("/item/offline-dw/data/userid.txt"));
         //输出流
-        BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(new File("E:/hadoop111")));
+        BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(new File("./out/wordcount.txt")));
 
         byte[] buff = new byte[1024*8];
         for (int i = 0; i < 128 * 1024; i++) {

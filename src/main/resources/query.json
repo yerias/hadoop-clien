@@ -1,0 +1,52 @@
+[
+  {
+    "id": "user_list",
+    "key": "id",
+    "tableName": "用户列表",
+    "className": "cn.dmego.domain.User",
+    "column": [
+      {
+        "key": "rowIndex",
+        "header": "序号",
+        "width": "50",
+        "allowSort": "false"
+      },
+      {
+        "key": "id",
+        "header": "id",
+        "hidden": "true"
+      },
+      {
+        "key": "name",
+        "header": "姓名",
+        "width": "100",
+        "allowSort": "true"
+      }
+    ]
+  },
+  {
+    "id": "role_list",
+    "key": "id",
+    "tableName": "角色列表",
+    "className": "cn.dmego.domain.Role",
+    "column": [
+      {
+        "key": "rowIndex",
+        "header": "序号",
+        "width": "50",
+        "allowSort": "false"
+      },
+      {
+        "key": "id",
+        "header": "id",
+        "hidden": "true"
+      },
+      {
+        "key": "name",
+        "header": "名称",
+        "width": "100",
+        "allowSort": "true"
+      }
+    ]
+  }
+]

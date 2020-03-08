@@ -1,7 +1,7 @@
 package com.tunan.hadoop.join;
 
 import com.tunan.hadoop.pojo.JoinMain;
-import com.tunan.hadoop.utils.FileUtil;
+import com.tunan.utils.FileUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;

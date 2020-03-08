@@ -1,7 +1,7 @@
 package com.tunan.hadoop.flow;
 
 import com.tunan.hadoop.pojo.Flow;
-import com.tunan.hadoop.utils.FileUtil;
+import com.tunan.utils.FileUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -17,7 +17,6 @@ import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
 import java.io.IOException;
-import java.util.Iterator;
 
 /**
  * @description: 流量分析

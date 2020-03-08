@@ -1,7 +1,7 @@
 package com.tunan.hadoop.join;
 
 import com.tunan.hadoop.pojo.JoinMain;
-import com.tunan.hadoop.utils.FileUtil;
+import com.tunan.utils.FileUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -16,7 +16,6 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
-import org.codehaus.groovy.runtime.wrappers.LongWrapper;
 
 
 import java.io.*;
@@ -93,7 +92,7 @@ public class MapJoinDriver extends Configured implements Tool {
                 //切分字符串得到字符串数组
                 String[] split = line.split("\t");
                 hashMap.put(Integer.parseInt(split[0]),split[1]);
-            }
+        }
             IOUtils.closeStream(br);
         }
 

@@ -2,7 +2,7 @@ package com.tunan.json.movie;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tunan.hadoop.join.MapJoinDriver;
-import com.tunan.hadoop.utils.FileUtil;
+import com.tunan.utils.FileUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;

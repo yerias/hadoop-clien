@@ -1,8 +1,6 @@
 package com.tunan.ip.ip1;
 
-import com.difeng.qqwry2.IPLocation;
-import com.difeng.qqwry2.Location;
-import com.tunan.hadoop.utils.FileUtil;
+import com.tunan.utils.FileUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -51,7 +49,7 @@ public class IpParserDriver extends Configured implements Tool {
         job.setJarByClass(IpParserDriver.class);
 
         //设置Map/Reducer类
-        job.setMapperClass(IpParserMapper.class);
+        //job.setMapperClass(IpParserMapper.class);
 
         // 设置Partitoner
         job.setNumReduceTasks(0);
@@ -69,7 +67,7 @@ public class IpParserDriver extends Configured implements Tool {
         return b ? 0 : 1;
     }
 
-    public static class IpParserMapper extends Mapper<LongWritable, Text, NullWritable,Text>{
+    /*public static class IpParserMapper extends Mapper<LongWritable, Text, NullWritable,Text>{
         @Override
         protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             String[] line = value.toString().split("\t");
@@ -87,6 +85,6 @@ public class IpParserDriver extends Configured implements Tool {
             Location loc = ipLocation.fetchIPLocation(ip);
             return loc.country +":"+ loc.area;
         }
-    }
+    }*/
 }
 
