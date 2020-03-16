@@ -14,7 +14,7 @@ import java.util.List;
 public class TestFastJosn {
 
     public static void main(String[] args) {
-//        objectToJson();
+        objectToJson();
         JsonToObject();
     }
 
