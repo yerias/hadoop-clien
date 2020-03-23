@@ -139,8 +139,9 @@ public class ReduceJoinDriver extends Configured implements Tool {
                     list.add(m);
                 }else if (main.getFlag() ==2 ){ //dept
                     //拿到dept表中的dname
-                dname = main.getDname();
-            }}
+                    dname = main.getDname();
+                }
+            }
             //循环赋值
             for (JoinMain bean : list) {
                 bean.setDname(dname);

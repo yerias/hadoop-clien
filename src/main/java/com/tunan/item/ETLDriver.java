@@ -60,7 +60,7 @@ public class ETLDriver extends Configured implements Tool {
        /* String in = "/item/offline-dw/raw/access/20200217";
         String out = "/out";*/
 
-        Configuration conf = super.getConf();
+        //Configuration conf = super.getConf();
 
         FileUtil.checkFileIsExists(conf, out);
 

@@ -56,7 +56,7 @@ public class MapJoinDriver extends Configured implements Tool {
 
         job.setJarByClass(MapJoinDriver.class);
 
-        job.addCacheFile(new URI("data/join/dept.txt"));
+        job.addCacheFile(new URI("file://data/join/dept.txt"));
 
         job.setMapperClass(MapperJoin.class);
 
@@ -79,11 +79,7 @@ public class MapJoinDriver extends Configured implements Tool {
             //得到缓存文件路径
             //String path = context.getCacheFiles()[0].getPath().toString();
             String path = context.getCacheFiles()[0].getPath();
-            /*URI[] files = context.getCacheFiles();   //URI 通过getPath()解码 没有toString()方法
-            String s = files[0].getPath();*/
-            //得到文件
-            //File file = new File(cacheFiles[0]);
-            //String path = file.getPath();
+
             //得到文件的流        InputStreamReader将字节转换为字符
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(path)));
             //读取文件为字符串

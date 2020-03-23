@@ -24,8 +24,8 @@ import java.io.IOException;
  * @since: 1.0.0
  **/
 public class MyDistinct extends Configured implements Tool {
-    String in = "data/wordcount.txt";
-    String out = "out";
+    String in = "hadoop-client/data/wordcount.txt";
+    String out = "hadoop-client/out";
 
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
