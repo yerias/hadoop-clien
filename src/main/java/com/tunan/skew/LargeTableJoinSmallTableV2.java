@@ -33,7 +33,7 @@ public class LargeTableJoinSmallTableV2 extends Configured implements Tool {
         FileSystem.enableSymlinks();
         System.setProperty("HADOOP_USER_NAME", "hadoop");
         Configuration conf = new Configuration();
-        conf.set("fs.defaultFS", "hdfs://hadoop:9000");
+        conf.set("fs.defaultFS", "hdfs://192.168.91.10:9000");
         conf.set("dfs.client.use.datanode.hostname", "true");
 
 
