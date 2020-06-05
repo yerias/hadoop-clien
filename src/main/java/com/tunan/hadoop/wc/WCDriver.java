@@ -30,6 +30,7 @@ public class WCDriver {
         String out = "out";
 
         Configuration conf = new Configuration();
+        conf.set("name","tunan");
 
         //检查文件
         FileUtil.checkFileIsExists(conf,out);

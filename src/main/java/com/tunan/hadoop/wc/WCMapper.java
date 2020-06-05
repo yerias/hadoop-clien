@@ -21,6 +21,8 @@ public class WCMapper extends Mapper<LongWritable,Text,Text, IntWritable> {
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+        String name = context.getConfiguration().get("name");
+
         String[] words = value.toString().split(",");
         for (String word: words) {
             //注意点2

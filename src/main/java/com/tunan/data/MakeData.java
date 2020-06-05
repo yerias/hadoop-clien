@@ -52,10 +52,13 @@ public class MakeData {
     //造数据
     public static void main(String[] args) throws IOException {
 
-        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("ip/access.txt"),true)));
+        String file = "E:\\Java\\spark\\tunan-spark\\tunan-spark-core\\ip\\access.txt";
+
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(file),true)));
 
         MakeData makeData = new MakeData();
-        for (int i = 0; i < 200000; i++) {
+        int max = 5000000;
+        for (int i = 0; i < max; i++) {
             String line = makeData.log_down();
             writer.write(line);
             writer.newLine();
@@ -115,11 +118,11 @@ public class MakeData {
         //访问url
         String[] uris = {"http://www.ruozedata.com",
                 "https://ruoze.ke.qq.com",
-                "https://www.bilibili.com/video/av76542615?wd=flume",
-                "https://www.bilibili.com/video/av80522857?wd=apache",
-                "https://www.bilibili.com/video/av73376233?wd=hive",
-                "https://www.bilibili.com/video/av52167219?wd=spark",
-                "https://www.bilibili.com/video/av30031910?wd=flink",
+                "https://www.aiqiyi.com/video/av76542615?wd=flume",
+                "https://www.baidu.com/video/av80522857?wd=apache",
+                "https://www.tianmao.com/video/av73376233?wd=hive",
+                "https://www.jd.com/video/av52167219?wd=spark",
+                "https://www.taobao.com/video/av30031910?wd=flink",
                 "https://www.bilibili.com/video/av34829124?wd=yarn"};
         int anInt = new Random().nextInt(100);
         int r1 = anInt % 8;

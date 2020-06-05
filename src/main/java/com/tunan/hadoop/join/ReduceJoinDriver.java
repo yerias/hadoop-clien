@@ -116,6 +116,23 @@ public class ReduceJoinDriver extends Configured implements Tool {
         }
     }
 
+
+    /**
+     * reduceJoin思路
+     * 定义输出实体类
+     * map进来两张表，做标记，
+     * 把每张表需要的字段写进实体类，join值为key，实体类为value
+     *
+     * reduce每次进来相同key的一组数据
+     * 用
+     * 如果是左表，左表数据重新set进实体类，然后添加到list
+     * 如果是右表，则把值赋值给String变量
+     *
+     * 最后循环左边，从String变量拿到值补全实体类
+     */
+
+
+
     public static class JoinReducer extends Reducer<IntWritable, JoinMain,JoinMain, NullWritable> {
         //核心思路在 每个deptno组 进一次reduce ，前提是map中的key是deptno
         @Override

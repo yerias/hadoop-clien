@@ -2,7 +2,7 @@
 1002,tengxun,ruoze.ke.qq.com
 1003,aqy,www.aiqiyi.com
 1004,baidu,www.baidu.com
-1005,alibaba,www.www.tianmao.com
-1006,jd,jd.com
+1005,alibaba,www.tianmao.com
+1006,jd,www.jd.com
 1005,alibaba,www.taobao.com
 1005,tengxun,www.bilibili.com
